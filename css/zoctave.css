@@ -1,8 +1,55 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
+  margin: 0;
+  padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal
+}
+
+ul {
+  list-style: none
+}
+
+button, input, select, textarea {
+  margin: 0
+}
+
+html {
+  box-sizing: border-box
+}
+
+*, :after, :before {
+  box-sizing: inherit
+}
+
+audio, embed, iframe, img, object, video {
+  max-width: 100%
+}
+
+iframe {
+  border: 0
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+td, th {
+  padding: 0;
+  text-align: left
+}
+
+
 /*
  * space-case
  * made by jmacthefatcat
  * zerooctave.ca
 */
+
 /*** DEFINE VARIABLES **/
 :root {
   --scale-root: 1.5;
@@ -39,6 +86,8 @@
   --purple-2: #DA77FF;
   --pink-1: #FF69B4;
   --pink-2: #FFAFCF;
+  --zo-green-1: #2B8278;
+  --zo-green-2: #3CB371;
 }
 
 @media screen and (max-width: 768px) {
@@ -49,7 +98,7 @@
 
 /*** BASICS ***/
 html {
-  font-size: 87.5%;
+  font-size: 100%;
   /* 87.5% = 14px if browser default font is set to 16px */
   height: 100%;
 }
@@ -70,21 +119,21 @@ body {
 /*** TYPOGRAPHY ***/
 @media screen and (min-width:769px) {
   html {
-    font-size: 100%;
+    font-size: 112.5%;
     /* 100% = 16px if browser default font is set to 16px */
   }
 }
 
 @media screen and (min-width:1025px) {
   html {
-    font-size: 112.5%;
+    font-size: 125%;
     /* 112.5% = 18px if browser default font is set to 16px */
   }
 }
 
 @media screen and (min-width:1921px) {
   html {
-    font-size: 125%;
+    font-size: 137.5%;
     /* 125% = 20px if browser default font is set to 16px */
   }
 }
@@ -149,7 +198,7 @@ a, a:visited {
 
 a:hover, a:focus {
   background-color: rgba(0, 0, 0, 0.8);
-  color: var(--white-2);
+  color: var(--white-2);;
   padding: 0 var(--xxs);
 }
 
@@ -458,7 +507,7 @@ small, .small, .text-s {
 }
 
 .text-subtle {
-  opacity: .6;
+  opacity: .7;
 }
 
 .font-light {
@@ -491,6 +540,13 @@ i, .italic {
 }
 
 /* display/position utilities */
+@media screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none!important;
+    visibility: hidden!important;
+  }
+}
+
 .display-inline {
   display: inline-block;
 }
@@ -873,4 +929,42 @@ i, .italic {
 .m-v-a {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+/* zero octave style sheet | jmacthefatcat */
+body {
+  font-family: canada-type-gibson, sans-serif;
+  color: var(--zo-green-1);
+  background-color: var(--white-1);
+}
+
+b, .bold, strong, .font-bold {
+  font-weight: 600;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+.title-font {
+  font-family: righteous, sans-serif;
+}
+
+a:hover, a:focus {
+  background-color: var(--zo-green-2);
+  color: var(--white-1);
+}
+
+@media screen and (max-width: 768px) {
+  .align-left-small {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .align-right-big {
+    display: flex;
+    justify-content: flex-end;
+  }
 }

@@ -1,12 +1,9 @@
-@import url("https://use.typekit.net/uct1kmd.css");
-@import url('https://fonts.googleapis.com/css?family=Righteous');
-
 header {
   padding-top: 3em;
 }
 
 body {
-  font-family: "aktiv-grotesk", sans-serif;
+  font-family: canada-type-gibson, "Arial Nova", "Arial", "Helvetica Neue", "Helvetica";
   background-color: #27313b;
 }
 
