@@ -1,3 +1,5 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{font-family:inherit;box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
 /*
  * space-case
  * made by jmacthefatcat
@@ -448,32 +450,32 @@ small, .small, .text-s {
   opacity: .7;
 }
 
-.font-light {
+.text-light {
   font-weight: 300;
 }
 
-b, .bold, .font-bold, strong {
+b, .bold, .text-bold, strong {
   font-weight: 700;
 }
 
-.font-heavy {
+.text-heavy {
   font-weight: 900;
 }
 
-.uppercase {
+.text-uppercase {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.capitilize {
+.text-capitilize {
   text-transform: capitalize;
 }
 
-.lowercase {
+.text-lowercase {
   text-transform: lowercase;
 }
 
-i, .italic, em {
+i, .text-italic, em {
   font-style: italic;
 }
 
@@ -502,19 +504,23 @@ i, .italic, em {
   }
 }
 
-.display-inline {
+.d-inline-block {
   display: inline-block;
 }
 
-.display-block {
+.d-inline {
+  display: inline;
+}
+
+.d-block {
   display: block;
 }
 
-.display-none {
-  display: none;
+.d-none {
+  display: none!important;
 }
 
-.display-flex {
+.d-flex {
   display: flex;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -536,21 +542,21 @@ i, .italic, em {
   flex-wrap: nowrap;
 }
 
-.horizontal-center {
+.h-center {
   display: flex;
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: center
 }
 
-.vertical-center {
+.v-center {
   display: flex;
   display: -ms-flexbox;
   display: -webkit-flex;
   align-items: center
 }
 
-.center-center {
+.vh-center, .hv-center {
   display: flex;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -584,17 +590,30 @@ i, .italic, em {
   justify-content: flex-end
 }
 
-.full-x-y {
+.full-hw, .full-wh {
   height: 100%;
   width: 100%;
 }
 
-.full-height {
+.full-h {
   height: 100%;
 }
 
-.full-width {
+.full-w {
   width: 100%;
+}
+
+.half-hw, .half-wh {
+  height: 50%;
+  width: 50%;
+}
+
+.half-h {
+  height: 50%;
+}
+
+.half-w {
+  width: 50%;
 }
 
 /* margin/padding utilities */
