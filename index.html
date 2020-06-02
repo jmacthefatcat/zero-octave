@@ -2,78 +2,49 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="Illustration, graphic design, css framework, etc. The catch all drawer of Jordan McCracken.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>zero octave - creative capsule of Jordan McCracken</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="stylesheet" href="https://use.typekit.net/uct1kmd.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
-  <link rel="stylesheet" href="css/space-case.css">
-  <link rel="stylesheet" href="css/zoctave.css">
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Illustration, graphic design, css framework, etc. The catch all drawer of Jordan McCracken.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>zero octave - home base of Jordan McCracken</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="assets/space-case.css">
+    <style>
+        @import url('https://rsms.me/inter/inter.css');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            body {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-  <header class="space-between flex-col p-h-xxl" style="width: 100vw; height: 95vh;">
-    <div class="vh-center" style="height: 78%">
-      <img src="imgs/zogo-fat-dark.svg" style="width: 80%; max-width: 400px;" alt="zero octave logo">
+    <div class="theme-wrapper">
+        <main class="w-100 d-flex justify-center content-center"
+            style="height: 100vh; border-top: 1rem #40BA92 solid; border-bottom: 1rem #40BA92 solid">
+            <div class="p-h-xl self-center">
+                <h1 class="text-xl"><b>zero octave</b></h1>
+            </div>
+            <div class="p-h-xl self-center text-m">
+                <span class="d-block" style="color: var(--grey)"><a href="https://zhotos.tumblr.com">/photos</a></span>
+                <span class="d-block" style="color: var(--grey)"><a href="https://londonstone.ca">/music</a></span>
+                <span class="d-block" style="color: var(--grey)"><a
+                        href="https://www.instagram.com/jrocktothebeat/">/instagram</a></span>
+                <span class="d-block" style="color: var(--grey)"><a href="https://blog.zerooctave.ca">/art</a></span>
+            </div>
+        </main>
     </div>
-    <div style="height: 18%">
-      <hr>
-      <h1 class="text-uppercase title-font text-m">zero octave</h1>
-      <span class="title-font text-subtle text-uppercase text-s">All things Jordan McCracken</span>
-    </div>
-  </header>
-
-  <main>
-    <section class="d-flex flex-wrap p-b-xxl" style="background-color: var(--zo-teal-1); color: var(--white);">
-      <article class="sm-w-100 w-50 p-t-xxl p-h-xxl">
-        <h2 class="text-s text-uppercase text-bold">Web</h2>
-        <hr>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://jmacthefatcat.github.io/space-case">Space Case</a></h4>
-          <span class="text-subtle text-italic">CSS Framework project -- What's live at the moment is an old version, I am currently rebuilding from the ground up.</span>
-        </div>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://gl.zerooctave.ca">Game List</a></h4>
-          <span class="text-subtle text-italic">Notebook/List idea for video games I am currently playing/have played. Eventually want to turn it into an web app.</span>
-        </div>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://jmacthefatcat.github.io/win-10-colours">Win. 10 Colours</a></h4>
-          <span class="text-subtle text-italic">List of all default theme colour hex values in Windows 10, because why not?</span>
-        </div>
-      </article>
-
-      <article class="sm-w-100 w-50 p-t-xxl p-h-xxl">
-        <h2 class="text-s text-uppercase text-bold">Art</h2>
-        <hr>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://londonstone.ca">London Stone</a></h4>
-          <span class="text-subtle text-italic">Band I write and play music with.</span>
-        </div>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://blog.zerooctave.ca">Creative Junk Drawer</a></h4>
-          <span class="text-subtle text-italic">Take a blog, a portfolio, and a pinch of a teenage diary and you have my tumblr.</span>
-        </div>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://instagram.com/jrocktothebeat">Instagram</a></h4>
-          <span class="text-subtle text-italic">Mainly photos and some random things here and there, more on the personal side.</span>
-        </div>
-        <div class="p-t-m">
-          <h4 class="text-bold"><a href="https://deviantart.com/nyct0ph0bia">Deviant Art</a></h4>
-          <span class="text-subtle text-italic">I know, I know, but I really like the redesign.</span>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer class="p-xxl" style="background-color: var(--black);">
-    <div class="d-flex flex-col vh-center" style="color: var(--light-grey); min-height: 400px;">
-      <span class="d-block h5 text-uppercase title-font">zero octave</span>
-      <span class="d-block text-s text-uppercase">Made with <span style="color: var(--zo-teal-1);">❤️</span></span>
-    </div>
-  </footer>
 </body>
 
 </html>
