@@ -53,23 +53,3 @@ html {
 .stack>*+* {
   margin-top: var(--s);
 }
-
-nav {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: nowrap;
-
-}
-
-.nav-item {
-  margin-left: var(--s);
-  margin-right: var(--s);
-}
-
-.nav-item:first-of-type {
-  margin-left: 0;
-}
-
-.nav-item:last-of-type {
-  margin-right: 0;
-}
