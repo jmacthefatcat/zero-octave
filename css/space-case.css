@@ -1,0 +1,1325 @@
+/* Your variables */
+:root {
+  --scale: 1.5;
+  --s-5: calc(var(--s-4) / var(--scale));
+  --s-4: calc(var(--s-3) / var(--scale));
+  --s-3: calc(var(--s-2) / var(--scale));
+  --s-2: calc(var(--s-1) / var(--scale));
+  --s-1: calc(var(--s) / var(--scale));
+  --s: 1rem;
+  --s1: calc(var(--s) * var(--scale));
+  --s2: calc(var(--s1) * var(--scale));
+  --s3: calc(var(--s2) * var(--scale));
+  --s4: calc(var(--s3) * var(--scale));
+  --s5: calc(var(--s4) * var(--scale));
+  --s6: calc(var(--s5) * var(--scale));
+  --black: #000000;
+  --dark-grey: #27313B;
+  --grey: #54626F;
+  --s2ight-grey: #EEEEEE;
+  --yellow: #FFFF00;
+  --red: #CE2029;
+  --blue: #1974D2;
+  --green: #3CB371;
+  --purple: #663399;
+  --pink: #FE28A2;
+  --orange: #FF8C00;
+  --white: #FFFFFF;
+  --ivory: #FFFFF0;
+}
+
+/* Basics and reset by Andy Bell */
+/* Modified Reset Original -> https://github.com/hankchizljaw/modern-css-reset */
+/* Box sizing rules */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ol[class],
+ul[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol[class],
+p,
+ul[class] {
+  margin: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(1rem + 0.25vw);
+}
+
+/*
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 150%;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  html {
+    font-size: 175%;
+  }
+}
+*/
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ol[class],
+ul[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Table style when no class is specified */
+table:not([class]) {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+
+table:not([class]) td,
+table:not([class]) th {
+  border: 1px solid var(--grey);
+  text-align: left;
+  padding: var(--s-2);
+  vertical-align: middle;
+}
+
+table:not([class]) tr:nth-child(even) {
+  background-color: var(--s2ight-grey);
+}
+
+/* Typography and font related */
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  width: 100%;
+  font-weight: inherit;
+}
+
+.h1, h1 {
+  font-size: var(--s4);
+}
+
+.h2, h2 {
+  font-size: var(--s3);
+}
+
+.h3, h3 {
+  font-size: var(--s2);
+}
+
+.h4, h4 {
+  font-size: var(--s1);
+}
+
+.h5, h5 {
+  text-transform: uppercase;
+  font-size: var(--s);
+  letter-spacing: 0.02em;
+}
+
+.h6, h6 {
+  text-transform: uppercase;
+  font-size: var(--s-1);
+  letter-spacing: 0.02em;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: var(--s);
+}
+
+.h1+p, .h2+p, .h3+p, .h4+p, .h5+p, .h6+p {
+  margin-top: var(--s);
+}
+
+p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
+  margin-top: var(--s);
+}
+
+p+.h1, p+.h2, p+.h3, p+.h4, p+.h5, p+.h6 {
+  margin-top: var(--s);
+}
+
+p+p {
+  margin-top: var(--s);
+}
+
+/* not needed?
+p:last-of-type {
+  margin-bottom: var(--s);
+}
+*/
+code {
+  background-color: var(--dark-grey);
+  color: var(--ivory);
+  padding: 0 var(--s-2);
+  font-weight: 400;
+  border-radius: 0.125rem;
+}
+
+pre>code {
+  display: block;
+  padding: var(--s);
+  line-height: 1.6;
+  border-radius: var(--s-2);
+}
+
+ins {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+del {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+blockquote {
+  border-left: 0.2rem solid var(--blue);
+  display: inline-block;
+  padding: var(--s1);
+  font-style: italic;
+  font-family: "Georgia", serif;
+}
+
+/* text utilities */
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-xs {
+  font-size: var(--s-2);
+}
+
+small, .small, .text-s {
+  font-size: var(--s-1);
+}
+
+.text-normal {
+  font-size: var(--s);
+}
+
+.text-m {
+  font-size: var(--s1);
+}
+
+.text-l {
+  font-size: var(--s2);
+}
+
+.text-xl {
+  font-size: var(--s3);
+}
+
+.text-xxl {
+  font-size: var(--s4);
+}
+
+.text-xxxl {
+  font-size: var(--s5);
+}
+
+.text-xxxxl {
+  font-size: var(--s6);
+}
+
+.text-subtle {
+  opacity: 0.7;
+}
+
+.text-thin {
+  font-weight: 300;
+}
+
+.text-plain, .text-book {
+  font-weight: 400;
+}
+
+b, .bold, .text-bold, strong {
+  font-weight: 600;
+}
+
+.text-heavy {
+  font-weight: 700;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-capitilize {
+  text-transform: capitalize;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+i, .text-italic, em {
+  font-style: italic;
+}
+
+.text-light {
+  color: var(--white);
+}
+
+.text-dark {
+  color: var(--black);
+}
+
+/* White space, you're padding and margin */
+.p-xxs {
+  padding: var(--s-2);
+}
+
+.p-l-xxs {
+  padding-left: var(--s-2);
+}
+
+.p-r-xxs {
+  padding-right: var(--s-2);
+}
+
+.p-t-xxs {
+  padding-top: var(--s-2);
+}
+
+.p-b-xxs {
+  padding-bottom: var(--s-2);
+}
+
+.p-h-xxs {
+  padding-left: var(--s-2);
+  padding-right: var(--s-2);
+}
+
+.p-v-xxs {
+  padding-top: var(--s-2);
+  padding-bottom: var(--s-2);
+}
+
+.p-xs {
+  padding: var(--s-1);
+}
+
+.p-l-xs {
+  padding-left: var(--s-1);
+}
+
+.p-r-xs {
+  padding-right: var(--s-1);
+}
+
+.p-t-xs {
+  padding-top: var(--s-1);
+}
+
+.p-b-xs {
+  padding-bottom: var(--s-1);
+}
+
+.p-h-xs {
+  padding-left: var(--s-1);
+  padding-right: var(--s-1);
+}
+
+.p-v-xs {
+  padding-top: var(--s-1);
+  padding-bottom: var(--s-1);
+}
+
+.p-s {
+  padding: var(--s);
+}
+
+.p-l-s {
+  padding-left: var(--s);
+}
+
+.p-r-s {
+  padding-right: var(--s);
+}
+
+.p-t-s {
+  padding-top: var(--s);
+}
+
+.p-b-s {
+  padding-bottom: var(--s);
+}
+
+.p-h-s {
+  padding-left: var(--s);
+  padding-right: var(--s);
+}
+
+.p-v-s {
+  padding-top: var(--s);
+  padding-bottom: var(--s);
+}
+
+.p-m {
+  padding: var(--s1);
+}
+
+.p-l-m {
+  padding-left: var(--s1);
+}
+
+.p-r-m {
+  padding-right: var(--s1);
+}
+
+.p-t-m {
+  padding-top: var(--s1);
+}
+
+.p-b-m {
+  padding-bottom: var(--s1);
+}
+
+.p-h-m {
+  padding-left: var(--s1);
+  padding-right: var(--s1);
+}
+
+.p-v-m {
+  padding-top: var(--s1);
+  padding-bottom: var(--s1);
+}
+
+.p-l {
+  padding: var(--s2);
+}
+
+.p-l-l {
+  padding-left: var(--s2);
+}
+
+.p-r-l {
+  padding-right: var(--s2);
+}
+
+.p-t-l {
+  padding-top: var(--s2);
+}
+
+.p-b-l {
+  padding-bottom: var(--s2);
+}
+
+.p-h-l {
+  padding-left: var(--s2);
+  padding-right: var(--s2);
+}
+
+.p-v-l {
+  padding-top: var(--s2);
+  padding-bottom: var(--s2);
+}
+
+.p-xl {
+  padding: var(--s3);
+}
+
+.p-l-xl {
+  padding-left: var(--s3);
+}
+
+.p-r-xl {
+  padding-right: var(--s3);
+}
+
+.p-t-xl {
+  padding-top: var(--s3);
+}
+
+.p-b-xl {
+  padding-bottom: var(--s3);
+}
+
+.p-h-xl {
+  padding-left: var(--s3);
+  padding-right: var(--s3);
+}
+
+.p-v-xl {
+  padding-top: var(--s3);
+  padding-bottom: var(--s3);
+}
+
+.p-xxl {
+  padding: var(--s4);
+}
+
+.p-l-xxl {
+  padding-left: var(--s4);
+}
+
+.p-r-xxl {
+  padding-right: var(--s4);
+}
+
+.p-t-xxl {
+  padding-top: var(--s4);
+}
+
+.p-b-xxl {
+  padding-bottom: var(--s4);
+}
+
+.p-h-xxl {
+  padding-left: var(--s4);
+  padding-right: var(--s4);
+}
+
+.p-v-xxl {
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+.p-xxxl {
+  padding: var(--s5);
+}
+
+.p-l-xxxl {
+  padding-left: var(--s5);
+}
+
+.p-r-xxxl {
+  padding-right: var(--s5);
+}
+
+.p-t-xxxl {
+  padding-top: var(--s5);
+}
+
+.p-b-xxxl {
+  padding-bottom: var(--s5);
+}
+
+.p-h-xxxl {
+  padding-left: var(--s5);
+  padding-right: var(--s5);
+}
+
+.p-v-xxxl {
+  padding-top: var(--s5);
+  padding-bottom: var(--s5);
+}
+
+.p-xxxxl {
+  padding: var(--s6);
+}
+
+.p-l-xxxxl {
+  padding-left: var(--s6);
+}
+
+.p-r-xxxxl {
+  padding-right: var(--s6);
+}
+
+.p-t-xxxxl {
+  padding-top: var(--s6);
+}
+
+.p-b-xxxxl {
+  padding-bottom: var(--s6);
+}
+
+.p-h-xxxxl {
+  padding-left: var(--s6);
+  padding-right: var(--s6);
+}
+
+.p-v-xxxxl {
+  padding-top: var(--s6);
+  padding-bottom: var(--s6);
+}
+
+.p-a {
+  padding: auto;
+}
+
+.p-l-a {
+  padding-left: auto;
+}
+
+.p-r-a {
+  padding-right: auto;
+}
+
+.p-t-a {
+  padding-top: auto;
+}
+
+.p-b-a {
+  padding-bottom: auto;
+}
+
+.p-h-a {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.p-v-a {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.p-n {
+  padding: 0;
+}
+
+.p-l-n {
+  padding-left: 0;
+}
+
+.p-r-n {
+  padding-right: 0;
+}
+
+.p-t-n {
+  padding-top: 0;
+}
+
+.p-b-n {
+  padding-bottom: 0;
+}
+
+.p-h-n {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.p-v-n {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.m-xxs {
+  margin: var(--s-2);
+}
+
+.m-l-xxs {
+  margin-left: var(--s-2);
+}
+
+.m-r-xxs {
+  margin-right: var(--s-2);
+}
+
+.m-t-xxs {
+  margin-top: var(--s-2);
+}
+
+.m-b-xxs {
+  margin-bottom: var(--s-2);
+}
+
+.m-h-xxs {
+  margin-left: var(--s-2);
+  margin-right: var(--s-2);
+}
+
+.m-v-xxs {
+  margin-top: var(--s-2);
+  margin-bottom: var(--s-2);
+}
+
+.m-xs {
+  margin: var(--s-1);
+}
+
+.m-l-xs {
+  margin-left: var(--s-1);
+}
+
+.m-r-xs {
+  margin-right: var(--s-1);
+}
+
+.m-t-xs {
+  margin-top: var(--s-1);
+}
+
+.m-b-xs {
+  margin-bottom: var(--s-1);
+}
+
+.m-h-xs {
+  margin-left: var(--s-1);
+  margin-right: var(--s-1);
+}
+
+.m-v-xs {
+  margin-top: var(--s-1);
+  margin-bottom: var(--s-1);
+}
+
+.m-s {
+  margin: var(--s);
+}
+
+.m-l-s {
+  margin-left: var(--s);
+}
+
+.m-r-s {
+  margin-right: var(--s);
+}
+
+.m-t-s {
+  margin-top: var(--s);
+}
+
+.m-b-s {
+  margin-bottom: var(--s);
+}
+
+.m-h-s {
+  margin-left: var(--s);
+  margin-right: var(--s);
+}
+
+.m-v-s {
+  margin-top: var(--s);
+  margin-bottom: var(--s);
+}
+
+.m-m {
+  margin: var(--s1);
+}
+
+.m-l-m {
+  margin-left: var(--s1);
+}
+
+.m-r-m {
+  margin-right: var(--s1);
+}
+
+.m-t-m {
+  margin-top: var(--s1);
+}
+
+.m-b-m {
+  margin-bottom: var(--s1);
+}
+
+.m-h-m {
+  margin-left: var(--s1);
+  margin-right: var(--s1);
+}
+
+.m-v-m {
+  margin-top: var(--s1);
+  margin-bottom: var(--s1);
+}
+
+.m-l {
+  margin: var(--s2);
+}
+
+.m-l-l {
+  margin-left: var(--s2);
+}
+
+.m-r-l {
+  margin-right: var(--s2);
+}
+
+.m-t-l {
+  margin-top: var(--s2);
+}
+
+.m-b-l {
+  margin-bottom: var(--s2);
+}
+
+.m-h-l {
+  margin-left: var(--s2);
+  margin-right: var(--s2);
+}
+
+.m-v-l {
+  margin-top: var(--s2);
+  margin-bottom: var(--s2);
+}
+
+.m-xl {
+  margin: var(--s3);
+}
+
+.m-l-xl {
+  margin-left: var(--s3);
+}
+
+.m-r-xl {
+  margin-right: var(--s3);
+}
+
+.m-t-xl {
+  margin-top: var(--s3);
+}
+
+.m-b-xl {
+  margin-bottom: var(--s3);
+}
+
+.m-h-xl {
+  margin-left: var(--s3);
+  margin-right: var(--s3);
+}
+
+.m-v-xl {
+  margin-top: var(--s3);
+  margin-bottom: var(--s3);
+}
+
+.m-xxl {
+  margin: var(--s4);
+}
+
+.m-l-xxl {
+  margin-left: var(--s4);
+}
+
+.m-r-xxl {
+  margin-right: var(--s4);
+}
+
+.m-t-xxl {
+  margin-top: var(--s4);
+}
+
+.m-b-xxl {
+  margin-bottom: var(--s4);
+}
+
+.m-h-xxl {
+  margin-left: var(--s4);
+  margin-right: var(--s4);
+}
+
+.m-v-xxl {
+  margin-top: var(--s4);
+  margin-bottom: var(--s4);
+}
+
+.m-xxxl {
+  margin: var(--s5);
+}
+
+.m-l-xxxl {
+  margin-left: var(--s5);
+}
+
+.m-r-xxxl {
+  margin-right: var(--s5);
+}
+
+.m-t-xxxl {
+  margin-top: var(--s5);
+}
+
+.m-b-xxxl {
+  margin-bottom: var(--s5);
+}
+
+.m-h-xxxl {
+  margin-left: var(--s5);
+  margin-right: var(--s5);
+}
+
+.m-v-xxxl {
+  margin-top: var(--s5);
+  margin-bottom: var(--s5);
+}
+
+.m-xxxxl {
+  margin: var(--s6);
+}
+
+.m-l-xxxxl {
+  margin-left: var(--s6);
+}
+
+.m-r-xxxxl {
+  margin-right: var(--s6);
+}
+
+.m-t-xxxxl {
+  margin-top: var(--s6);
+}
+
+.m-b-xxxxl {
+  margin-bottom: var(--s6);
+}
+
+.m-h-xxxxl {
+  margin-left: var(--s6);
+  margin-right: var(--s6);
+}
+
+.m-v-xxxxl {
+  margin-top: var(--s6);
+  margin-bottom: var(--s6);
+}
+
+.m-a {
+  margin: auto;
+}
+
+.m-l-a {
+  margin-left: auto;
+}
+
+.m-r-a {
+  margin-right: auto;
+}
+
+.m-t-a {
+  margin-top: auto;
+}
+
+.m-b-a {
+  margin-bottom: auto;
+}
+
+.m-h-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-v-a {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.m-n {
+  margin: 0;
+}
+
+.m-l-n {
+  margin-left: 0;
+}
+
+.m-r-n {
+  margin-right: 0;
+}
+
+.m-t-n {
+  margin-top: 0;
+}
+
+.m-b-n {
+  margin-bottom: 0;
+}
+
+.m-h-n {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.m-v-n {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Display, width, and other box properties */
+@media screen and (max-width: 768px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1920px) {
+  .hide-lg {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .hide-xl {
+    display: none !important;
+  }
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.full-screen {
+  height: 100vh;
+  width: 100vh;
+}
+
+.full-h {
+  height: 100vh;
+}
+
+.full-w {
+  width: 100vw;
+}
+
+.half-h {
+  height: 50vh;
+}
+
+.half-w {
+  width: 50vw;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-33 {
+  width: 33%;
+}
+
+.w-66 {
+  width: 66%;
+}
+
+/* Flex properties */
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.self-auto {
+  align-self: auto;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-no-grow {
+  flex-grow: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-no-shrink {
+  flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+/* Grid */
+/* based off of https://github.com/Heydon/fukol-grids */
+.sc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em;
+  /* Needs to be the same value as your gutter but negative */
+}
+
+.sc-grid>* {
+  flex: 1 0 205px;
+  /* Edit last value to declare minimum col size */
+  margin: 0.5em;
+  /* Gutter size */
+  min-width: 205px;
+  /* set a min-wdith that matches your min col size so your percentage based sizes still adhere to it */
+}
+
+.sc-g-auto {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sc-g-1 {
+  flex-basis: calc(25% - 1rem);
+}
+
+.sc-g-2 {
+  flex-basis: calc(50% - 1rem);
+}
+
+.sc-g-3 {
+  flex-basis: calc(75% - 1rem);
+}
+
+.sc-g-4 {
+  flex-basis: calc(100% - 1rem);
+}
+
+/* Usage example
+  <div class="sc-grid-box"> -- Helps keep grid flush and also allows you to add padding/margins around the grid
+  <ul class="sc-grid">
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+    <li><!-- grid cell/item/child/whatever --></li>
+  </ul>
+</div>
+*/
+/*# sourceMappingURL=space-case.css.map */
