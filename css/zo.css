@@ -12,6 +12,18 @@ html {
   }
 }
 
+a, a:visited, a:active {
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+a:hover {
+  color: var(--green);
+  border-bottom: 1px solid currentColor;
+  transition: color .3s;
+}
+
 .cover {
   display: flex;
   flex-direction: column;

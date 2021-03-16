@@ -1,6 +1,6 @@
 /* Your variables */
 :root {
-  --scale: 1.5;
+  --scale: 1.4;
   --s-5: calc(var(--s-4) / var(--scale));
   --s-4: calc(var(--s-3) / var(--scale));
   --s-3: calc(var(--s-2) / var(--scale));
@@ -16,7 +16,7 @@
   --black: #000000;
   --dark-grey: #27313B;
   --grey: #54626F;
-  --s2ight-grey: #EEEEEE;
+  --light-grey: #EEEEEE;
   --yellow: #FFFF00;
   --red: #CE2029;
   --blue: #1974D2;
@@ -26,79 +26,50 @@
   --orange: #FF8C00;
   --white: #FFFFFF;
   --ivory: #FFFFF0;
+  --measure: 60ch;
+  --large-measure: 120ch;
+  line-height: var(--scale);
+  background-color: var(--white);
+  color: var(--dark-grey);
 }
 
-/* Basics and reset by Andy Bell */
-/* Modified Reset Original -> https://github.com/hankchizljaw/modern-css-reset */
 /* Box sizing rules */
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* Remove default padding */
-ol[class],
-ul[class] {
-  padding: 0;
-}
-
 /* Remove default margin */
-blockquote,
 body,
-dd,
-dl,
-figure,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-ol[class],
 p,
-ul[class] {
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"], ul[class],
+ol[role="list"], ol[class] {
+  list-style: none;
+}
 
-html {
+/* Set core root defaults */
+html:focus-within {
   scroll-behavior: smooth;
-  font-size: calc(1rem + 0.25vw);
 }
-
-/*
-@media screen and (min-width: 769px) {
-  html {
-    font-size: 125%;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  html {
-    font-size: 150%;
-  }
-}
-
-@media screen and (min-width: 1921px) {
-  html {
-    font-size: 175%;
-  }
-}
-*/
 
 /* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: inherit;
-}
-
-/* Remove list styles on ul, ol elements with a class attribute */
-ol[class],
-ul[class] {
-  list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
@@ -113,27 +84,23 @@ picture {
   display: block;
 }
 
-/* Natural flow and rhythm in articles by default */
-article>*+* {
-  margin-top: 1em;
-}
-
 /* Inherit fonts for inputs and buttons */
-button,
 input,
-select,
-textarea {
+button,
+textarea,
+select {
   font: inherit;
-}
-
-/* Blur images when they have no alt attribute */
-img:not([alt]) {
-  filter: blur(10px);
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -141,183 +108,44 @@ img:not([alt]) {
   }
 }
 
-/* Table style when no class is specified */
-table:not([class]) {
-  border-collapse: collapse;
+hr {
+  background-color: currentColor;
+  padding: var(--s-5);
+  border: 0;
   width: 100%;
-  margin: 0 auto;
 }
 
-table:not([class]) td,
-table:not([class]) th {
-  border: 1px solid var(--grey);
-  text-align: left;
-  padding: var(--s-2);
-  vertical-align: middle;
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  hyphens: auto
 }
 
-table:not([class]) tr:nth-child(even) {
-  background-color: var(--s2ight-grey);
-}
-
-/* Typography and font related */
-h1, h2, h3, h4, h5, h6 {
-  display: block;
-  width: 100%;
-  font-weight: inherit;
+.text-jumbo {
+  font-size: var(--s6);
 }
 
 .h1, h1 {
-  font-size: var(--s4);
+  font-size: var(--s4)
 }
 
 .h2, h2 {
-  font-size: var(--s3);
+  font-size: var(--s3)
 }
 
-.h3, h3 {
-  font-size: var(--s2);
+.h3, h3, .text-large {
+  font-size: var(--s2)
 }
 
-.h4, h4 {
-  font-size: var(--s1);
+.h4, h4, .text-medium {
+  font-size: var(--s1)
 }
 
-.h5, h5 {
-  text-transform: uppercase;
-  font-size: var(--s);
-  letter-spacing: 0.02em;
-}
-
-.h6, h6 {
-  text-transform: uppercase;
-  font-size: var(--s-1);
-  letter-spacing: 0.02em;
-  opacity: 0.5;
-  font-weight: 600;
-}
-
-h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
-  margin-top: var(--s);
-}
-
-.h1+p, .h2+p, .h3+p, .h4+p, .h5+p, .h6+p {
-  margin-top: var(--s);
-}
-
-p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
-  margin-top: var(--s);
-}
-
-p+.h1, p+.h2, p+.h3, p+.h4, p+.h5, p+.h6 {
-  margin-top: var(--s);
-}
-
-p+p {
-  margin-top: var(--s);
-}
-
-/* not needed?
-p:last-of-type {
-  margin-bottom: var(--s);
-}
-*/
-code {
-  background-color: var(--dark-grey);
-  color: var(--ivory);
-  padding: 0 var(--s-2);
-  font-weight: 400;
-  border-radius: 0.125rem;
-}
-
-pre>code {
-  display: block;
-  padding: var(--s);
-  line-height: 1.6;
-  border-radius: var(--s-2);
-}
-
-ins {
-  background-color: var(--green);
-  color: var(--white);
-}
-
-del {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-blockquote {
-  border-left: 0.2rem solid var(--blue);
-  display: inline-block;
-  padding: var(--s1);
-  font-style: italic;
-  font-family: "Georgia", serif;
-}
-
-/* text utilities */
 .text-right {
   text-align: right;
 }
 
 .text-center {
   text-align: center;
-}
-
-.text-xs {
-  font-size: var(--s-2);
-}
-
-small, .small, .text-s {
-  font-size: var(--s-1);
-}
-
-.text-normal {
-  font-size: var(--s);
-}
-
-.text-m {
-  font-size: var(--s1);
-}
-
-.text-l {
-  font-size: var(--s2);
-}
-
-.text-xl {
-  font-size: var(--s3);
-}
-
-.text-xxl {
-  font-size: var(--s4);
-}
-
-.text-xxxl {
-  font-size: var(--s5);
-}
-
-.text-xxxxl {
-  font-size: var(--s6);
-}
-
-.text-subtle {
-  opacity: 0.7;
-}
-
-.text-thin {
-  font-weight: 300;
-}
-
-.text-plain, .text-book {
-  font-weight: 400;
-}
-
-b, .bold, .text-bold, strong {
-  font-weight: 600;
-}
-
-.text-heavy {
-  font-weight: 700;
 }
 
 .text-uppercase {
@@ -333,16 +161,20 @@ b, .bold, .text-bold, strong {
   text-transform: lowercase;
 }
 
-i, .text-italic, em {
-  font-style: italic;
-}
-
 .text-light {
   color: var(--white);
 }
 
 .text-dark {
   color: var(--black);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-heavy {
+  font-weight: 900;
 }
 
 /* White space, you're padding and margin */
@@ -1322,4 +1154,3 @@ i, .text-italic, em {
   </ul>
 </div>
 */
-/*# sourceMappingURL=space-case.css.map */
