@@ -1,6 +1,15 @@
-html {
-  font-family: 'canada-type-gibson', sans-serif;
-  color: var(--dark-grey);
+@import url('https://rsms.me/inter/inter.css');
+
+html { 
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-grey); 
+}
+
+@supports (font-variation-settings: normal) {
+  html { 
+    font-family: 'Inter var', sans-serif;
+    color: var(--dark-grey);
+  }
 }
 
 .cover {
